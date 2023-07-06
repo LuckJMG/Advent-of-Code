@@ -1,6 +1,7 @@
 use std::fs::read_to_string;
 use std::path::Path;
 
+// Part 1
 fn main() {
     const GAME_POINTS: (u32, u32, u32) = (0, 3, 6); // (lose, tie, win)
     const HAND_POINTS: (u32, u32, u32) = (1, 2, 3); // (rock, paper, scissor)
