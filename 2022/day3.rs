@@ -1,3 +1,24 @@
+// Part 1
+use std::fs::read_to_string;
+
+fn main() {
+	let mut total_priority: u32 = 0;
+
+	for line in read_to_string("src/input.txt").unwrap().lines() {
+		let rucksack = line.split_at(line.len() / 2);
+
+		for item in rucksack.0.chars() {
+			if rucksack.1.contains(item) {
+				total_priority += item as u32 - if item.is_uppercase() { 38 } else { 96 };
+				break;
+			}
+		}
+	}
+
+	println!("{total_priority}");
+}
+
+// Part 2
 use std::fs::read_to_string;
 
 fn main() {
